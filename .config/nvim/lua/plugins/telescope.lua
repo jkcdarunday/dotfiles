@@ -1,0 +1,11 @@
+require('telescope').load_extension('fzf')
+
+vimp.nnoremap('<leader>ff', '<cmd>Telescope find_files<cr>')
+vimp.nnoremap('<leader>fg', '<cmd>Telescope live_grep<cr>')
+vimp.nnoremap('<leader>fb', '<cmd>Telescope buffers<cr>')
+vimp.nnoremap('<leader>fh', '<cmd>Telescope help_tags<cr>')
+vimp.nnoremap('<leader>fo', '<cmd>Telescope oldfiles<cr>')
+vimp.nnoremap('<C-o>', '<cmd>Telescope find_files<cr>')
+vimp.nnoremap('<C-S-o>', '<cmd>Telescope oldfiles<cr>')
+vimp.nnoremap('<C-S-n>', '<cmd>Telescope find_files<cr>')
+vimp.nnoremap('<C-n>', '<cmd>Telescope find_files<cr>')
