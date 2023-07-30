@@ -1,0 +1,67 @@
+set timeoutlen 500
+
+set relativenumber
+set number
+
+set surround
+
+set clipboard+=unnamedplus
+
+let mapleader = " "
+
+" set quickscope
+
+" imap jk <Esc>
+
+" imap kj <Esc>
+" imap jj <Esc>
+
+" Use void clipboard for editing actions
+nnoremap x "_x
+nnoremap X "_X
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+" The ff. causes s in multiselect to break
+" vnoremap s "_s
+nnoremap s "_s
+
+vnoremap p "_dp
+vnoremap P "_dP
+
+" Allow using system clipboard when using leader key
+nnoremap <leader>x "+x
+nnoremap <leader>X "+X
+nnoremap <leader>d "+d
+nnoremap <leader>D "+D
+vnoremap <leader>d "+d
+vnoremap <leader>s "+s
+nnoremap <leader>s "+s
+
+vnoremap <leader>p "+dp
+vnoremap <leader>P "+dP
+
+
+map <C-l> e
+map <C-h> b
+
+" Page-up Page-down using Ctrl+J and Ctrl+k
+nnoremap <C-j> <C-d>
+nnoremap <C-k> <C-u>
+
+" File search actions
+nmap <leader>ff :action GotoFile<CR>
+nmap <leader>fa :action GotoAction<CR>
+nmap <leader>fg :action FindInPath<CR>
+nmap <leader>fo :action RecentFiles<CR>
+
+" Reference navigation actions
+nmap gi :action GotoImplementation<CR>
+nmap gr :action ShowUsages<CR>
+nmap <leader>rn :action RenameElement<CR>
+nmap <leader>rf :action RefactorThis<CR>
+nmap <leader>rs :action SafeDelete<CR>
+nmap <leader>ru :action Run<CR>
+nmap <leader>rd :action Debug<CR>
+
+set visualbell
