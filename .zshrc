@@ -21,9 +21,7 @@ zplug load
 
 . /usr/share/doc/find-the-command/ftc.zsh
 . $HOME/.zsh/autoqalc.bash
-
-
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+. /usr/bin/virtualenvwrapper.sh
 
 ###### Setup ######
 setopt vi  # must come before bindkey
@@ -33,9 +31,9 @@ export SAVEHIST=10000000
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 
+###### Keybinds #######
 bindkey '^H' slash-backward-kill-word
 bindkey '^[^?' slash-backward-kill-word
-#bindkey '^R' history-incremental-search-backward
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 bindkey "^[[1;5C" forward-word
@@ -47,31 +45,6 @@ bindkey "^[OM" vi-open-line-below
 bindkey "^R" fzf_history_search
 bindkey "^[[A" up-line-or-search
 bindkey "^[[B" down-line-or-search
-
-
-###### Declare paths ######
-export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-export GOPATH=$HOME/Codes/Go
-export ANDROID_SDK_ROOT="$HOME/.android-sdk"
-
-###### Customize prompt ######
-# From https://www.pedaldrivenprogramming.com/2018/09/customize-grml-zsh-config/
-# Replaced reply with ${VIRTUAL_ENV+${VIRTUAL_ENV:t} } as per documentation in /etc/zsh/zshrc
-. /usr/bin/virtualenvwrapper.sh
-
-function virtual_env_prompt () {
-    REPLY=${VIRTUAL_ENV+${VIRTUAL_ENV:t} }
-}
-
-#grml_theme_add_token virtual-env -f virtual_env_prompt '%F{magenta}' '%f'
-#zstyle ':prompt:grml:left:setup' items rc change-root path virtual-env vcs newline percent
-zstyle ':prompt:grml:left:setup' items rc change-root user at host path virtual-env vcs percent
-#grml_theme_add_token virtual-env -f virtual_env_prompt '%F{magenta}' '%f'
-
-# User Color
-zstyle ':prompt:grml:left:items:user' pre '%B%F{71}'
-
-#export WORKON_HOME=$HOME/.virtualenvs
 
 ###### Aliases ######
 alias mpv="env DRI_PRIME=1 mpv"
@@ -105,7 +78,6 @@ alias ulogs="journalctl --user -n 100 -f -u"
 
 alias btdu="btrfs filesystem du * -s | sort -h"
 
-
 # GRML Aliases
 alias ...="cd ../.."
 alias la="ls -A"
@@ -117,19 +89,22 @@ alias lsf="ls -l | grep -v '^d'"
 alias lsh="ls -lh"
 alias ls="ls --color=auto"
 
-# InteliJ IDEA aliases
+# InteliJ IDEA Aliases
 alias idea="intellij-idea-ultimate-edition"
 alias ideaq="idea \$PWD >/dev/null 2>&1 &"
 
 aurclone() { git clone "https://aur.archlinux.org/$1.git"; }
 absclone() { git clone "https://gitlab.archlinux.org/archlinux/packaging/packages/$1.git" }
 
+###### Declare paths ######
+export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+export GOPATH=$HOME/Codes/Go
+export ANDROID_SDK_ROOT="$HOME/.android-sdk"
 
-###### PNPM Paths ######
+# pnpm start
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
-
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
