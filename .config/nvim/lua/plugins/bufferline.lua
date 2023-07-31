@@ -1,14 +1,14 @@
 require("bufferline").setup{
-options = {
-offsets = {
-{
-filetype = "NvimTree",
-text = "File Explorer",
-highlight = "Directory",
-text_align = "left"
-}
-}
-}
+    options = {
+        offsets = {
+            {
+                filetype = "NvimTree",
+                text = "File Explorer",
+                highlight = "Directory",
+                text_align = "left"
+            }
+        }
+    }
 }
 vimp.nnoremap({'silent'}, '[b', ':BufferLineCycleNext<CR>')
 vimp.nnoremap({'silent'}, ']b', ':BufferLineCyclePrev<CR>')
