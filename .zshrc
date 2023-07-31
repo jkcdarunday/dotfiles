@@ -1,4 +1,6 @@
+##########################
 ###### Load plugins ######
+##########################
 . /usr/share/zsh/scripts/zplug/init.zsh
 zplug "olets/zsh-abbr"
 zplug "zsh-users/zsh-syntax-highlighting", defer:1
@@ -23,15 +25,21 @@ zplug load
 . $HOME/.zsh/autoqalc.bash
 . /usr/bin/virtualenvwrapper.sh
 
+
+###################
 ###### Setup ######
-setopt vi  # must come before bindkey
+###################
+setopt vi
 . ~/.profile
 export HISTSIZE=10000000
 export SAVEHIST=10000000
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 
+
+#######################
 ###### Keybinds #######
+#######################
 bindkey '^H' slash-backward-kill-word
 bindkey '^[^?' slash-backward-kill-word
 bindkey ";5C" forward-word
@@ -96,7 +104,10 @@ alias ideaq="idea \$PWD >/dev/null 2>&1 &"
 aurclone() { git clone "https://aur.archlinux.org/$1.git"; }
 absclone() { git clone "https://gitlab.archlinux.org/archlinux/packaging/packages/$1.git" }
 
+
+###########################
 ###### Declare paths ######
+###########################
 export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 export GOPATH=$HOME/Codes/Go
 export ANDROID_SDK_ROOT="$HOME/.android-sdk"
