@@ -28,16 +28,15 @@ vimp.nnoremap('<leader>d', '"+d')
 vimp.nnoremap('<leader>D', '"+D')
 vimp.vnoremap('<leader>d', '"+d')
 
--- Ctrl+Backspace should delete the word before the cursor (https://stackoverflow.com/questions/6039405/using-altbackspace-key-in-vim-command-line-to-delete-by-words)
--- Note: Not working :(
--- Fixed: 
--- Added iunmap <buffer> <C-H> in init.vim
--- vim.api.nvim_buf_del_keymap(0, 'i', '<C-H>')
-vimp.imap('<C-H>', '<C-W>')
-vimp.imap('<M-H>', '<C-W>')
--- vimp.noremap('<C-?>', '<C-W>')
--- vim.api.nvim_set_keymap('i', '<C-H>', '<C-W>', { noremap = true })
--- vim.api.nvim_set_keymap('i', '<C-H>', '<Esc>caw', {noremap = true})
+
+-- Map ctrl+backspace to delete previous word (https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word)
+-- Also https://vi.stackexchange.com/questions/25077/how-can-i-delete-forward-in-insert-mode
+vimp.inoremap('<C-h>', '<C-w>')
+-- vimp.nnoremap('<C-h>', 'dw') -- <C-h> conflicts with word skipping below
+vimp.noremap('<C-Del>', 'dw')
+vimp.inoremap('<C-Del>', '<space><esc>ce')
+vimp.noremap('<C-S-Del>', 'dW')
+vimp.inoremap('<C-S-Del>', '<esc>lcW')
 
 -- Clear seach highlighting
 vimp.nmap('<C-c>', ':nohlsearch<CR>')
