@@ -1,3 +1,13 @@
+###################
+###### Setup ######
+###################
+setopt vi
+. ~/.profile
+export HISTSIZE=10000000
+export SAVEHIST=10000000
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+
 ##########################
 ###### Load plugins ######
 ##########################
@@ -25,18 +35,6 @@ zplug load
 . /usr/share/doc/find-the-command/ftc.zsh
 . $HOME/.zsh/autoqalc.bash
 . /usr/bin/virtualenvwrapper.sh
-
-
-###################
-###### Setup ######
-###################
-setopt vi
-. ~/.profile
-export HISTSIZE=10000000
-export SAVEHIST=10000000
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-
 
 #######################
 ###### Keybinds #######
