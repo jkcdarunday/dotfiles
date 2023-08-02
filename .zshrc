@@ -2,6 +2,7 @@
 ###### Load plugins ######
 ##########################
 . /usr/share/zsh/scripts/zplug/init.zsh
+
 zplug "olets/zsh-abbr"
 zplug "zsh-users/zsh-syntax-highlighting", defer:1
 zplug "zsh-users/zsh-autosuggestions", defer:2
@@ -58,6 +59,7 @@ bindkey "^[[B" down-line-or-search
 alias mpv="env DRI_PRIME=1 mpv"
 alias ssvim="sudo vim"
 alias svim="sudo -e"
+alias gclone="git clone"
 alias gfa="git fetch --all"
 alias gpull="git pull"
 alias gpush="git push"
@@ -102,6 +104,7 @@ alias idea="intellij-idea-ultimate-edition"
 alias ideaq="idea \$PWD >/dev/null 2>&1 &"
 
 aurclone() { git clone "https://aur.archlinux.org/$1.git"; }
+aursshclone() { git clone "ssh://aur@aur.archlinux.org/$1.git"; }
 absclone() { git clone "https://gitlab.archlinux.org/archlinux/packaging/packages/$1.git" }
 
 
