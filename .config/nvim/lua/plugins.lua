@@ -34,6 +34,7 @@ return require('packer').startup(function()
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
   use 'rcarriga/nvim-notify' -- Notification popups
   use 'RRethy/vim-illuminate' -- Highlight word under cursor
+  use { 'folke/noice.nvim', requires = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' } } -- Command UI
 
   -- Disabled plugins:
   -- use { 'williamboman/mason.nvim' } -- lsp package manager (not for CoC)
