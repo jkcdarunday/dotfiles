@@ -11,7 +11,7 @@ vim.o.ignorecase = true
 
 -- Spacing config (based on vimpeccable example)
 vim.o.tabstop=4 -- Tabs are seen as 4 spaces
-vim.o.shiftwidth=vim.o.tabstop -- Indents are the smae
+vim.o.shiftwidth=4 -- Indents are the smae
 vim.o.expandtab=true -- Expand tabs to spaces
 vim.o.autoindent=true -- Copy indents of newline from previous line
 vim.o.smarttab=true -- Inserts blanks on a tabkey (?)
@@ -25,14 +25,6 @@ vim.o.number=true
 
 -- Mapleader?
 vim.g.mapleader=" "
-
--- Set material color scheme
-vim.g.material_theme_style='default'
-vim.g.material_terminal_italics=1
-vim.cmd('colorscheme material')
-
--- Set material airline theme
-vim.g.airline_theme='material'
 
 -- Set vertical highlight
 -- vim.highlight.create('VertSplit', { ctermbg = 244, ctermfg
