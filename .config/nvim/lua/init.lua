@@ -3,7 +3,6 @@ require('core/general')
 require('core/bindings')
 
 --== PLUGIN CONFIGS ==--
-require('plugins/nvim-tree')
 require('plugins/startify')
 require('plugins/bufferline')
 require('plugins/telescope')
@@ -19,3 +18,4 @@ require('plugins/surround')
 require('plugins/nvim-notify')
 require('plugins/material')
 require('plugins/lualine')
+require('plugins/neotree')

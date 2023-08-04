@@ -7,8 +7,7 @@ vim.o.timeoutlen=500
 
 -- Ctrl+Shift+N should search for files using fzf line it does in IntelliJ
 -- vimp.noremap('<C-n>', ':Files<CR>') -- C-S-N is sent as C-N (https://groups.google.com/g/vim_use/c/sQVCPUn9-vY?pli=1)
--- vimp.noremap('<C-\\>', ':NvimTreeToggle<CR>')
-vimp.noremap('<C-\\>', ':NvimTreeFocus<CR>')
+vimp.noremap('<C-\\>', ':Neotree reveal<CR>')
 vim.api.nvim_set_keymap('n', '<c-P>',
   "<cmd>lua require('fzf-lua').files()<CR>",
   { noremap = true, silent = true })
@@ -40,7 +39,6 @@ vimp.inoremap('<C-S-Del>', '<esc>lcW')
 
 -- Clear seach highlighting
 vimp.nmap('<C-c>', ':nohlsearch<CR>')
-
 
 -- Map better scrolling
 vim.api.nvim_del_keymap('n', '<C-l>')
