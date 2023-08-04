@@ -29,6 +29,8 @@ zplug "laurenkt/zsh-vimto"
 zplug "plugins/dirhistory", from:oh-my-zsh, defer:2
 zplug "lib/clipboard", from:oh-my-zsh, defer:2
 
+# zplug "paulmelnikow/zsh-startup-timer" # Prints startup speed
+
 zplug check || zplug install
 zplug load
 
