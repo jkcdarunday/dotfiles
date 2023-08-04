@@ -4,7 +4,7 @@ local vimp = require('vimp')
 -- General config
 vim.o.hidden = true
 vim.o.history = 5000
-vim.o.mouse = 'a'
+vim.o.mouse = 'i'
 
 -- Make command autocomplete case-insensitive
 vim.o.ignorecase = true
