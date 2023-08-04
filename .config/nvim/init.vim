@@ -14,3 +14,4 @@ lua require 'init'
 :set number
 
 runtime copilot-workaround.vim
+
