@@ -32,7 +32,7 @@ zplug "lib/clipboard", from:oh-my-zsh, defer:2
 zplug check || zplug install
 zplug load
 
-. /usr/share/doc/find-the-command/ftc.zsh
+. /usr/share/doc/find-the-command/ftc.zsh noprompt info
 . $HOME/.zsh/autoqalc.bash
 . /usr/bin/virtualenvwrapper.sh
 
@@ -53,8 +53,8 @@ bindkey "^R" fzf_history_search
 bindkey "^[[A" up-line-or-search
 bindkey "^[[B" down-line-or-search
 
-###### Aliases ######
-alias mpv="env DRI_PRIME=1 mpv"
+###### Aliases/Abbreviations ######
+alias mpv="env DRI_PRIME=1 RADV_PERFTEST=video_decode vk_radv mpv"
 alias ssvim="sudo vim"
 alias svim="sudo -e"
 alias gclone="git clone"
@@ -85,6 +85,9 @@ alias logs="journalctl -n 100 -f -u"
 alias ulogs="journalctl --user -n 100 -f -u"
 
 alias btdu="btrfs filesystem du * -s | sort -h"
+alias q="qalc"
+alias pacman="sudo pacman"
+alias kwinprop="qdbus org.kde.KWin /KWin queryWindowInfo"
 
 # GRML Aliases
 alias ...="cd ../.."
