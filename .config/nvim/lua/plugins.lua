@@ -35,6 +35,7 @@ return require('packer').startup(function()
   use 'rcarriga/nvim-notify' -- Notification popups
   use 'RRethy/vim-illuminate' -- Highlight word under cursor
   use { 'folke/noice.nvim', requires = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' } } -- Command UI
+  use { 'folke/which-key.nvim' } -- Keybindings cheatsheet
 
   -- Disabled plugins:
   -- use { 'williamboman/mason.nvim' } -- lsp package manager (not for CoC)
