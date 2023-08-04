@@ -26,9 +26,6 @@ vim.o.number=true
 -- Mapleader?
 vim.g.mapleader=" "
 
--- Set vertical highlight
--- vim.highlight.create('VertSplit', { ctermbg = 244, ctermfg
-
 -- Override copilot node command (https://github.com/community/community/discussions/16800)
 -- vim.g.copilot_node_command='~/.n/n/versions/node/17.4.0/bin/node'
 
