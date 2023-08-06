@@ -11,8 +11,10 @@ setopt hist_ignore_all_dups
 ##########################
 ###### Load plugins ######
 ##########################
+export ZPLUG_BLAME_START_TIME=$(date +%s%N)
 . /usr/share/zsh/scripts/zplug/init.zsh
 
+zplug 'jkcdarunday/zplug-blame'
 zplug "olets/zsh-abbr"
 zplug "zsh-users/zsh-syntax-highlighting", defer:1
 zplug "zsh-users/zsh-autosuggestions", defer:2
@@ -29,10 +31,9 @@ zplug "laurenkt/zsh-vimto"
 zplug "plugins/dirhistory", from:oh-my-zsh, defer:2
 zplug "lib/clipboard", from:oh-my-zsh, defer:2
 
-# zplug "paulmelnikow/zsh-startup-timer" # Prints startup speed
-
 zplug check || zplug install
 zplug load
+zplug_blame::print_load_time
 
 . /usr/share/doc/find-the-command/ftc.zsh noprompt info
 . $HOME/.zsh/autoqalc.bash
@@ -90,6 +91,7 @@ alias btdu="btrfs filesystem du * -s | sort -h"
 alias q="qalc"
 alias pacman="sudo pacman"
 alias kwinprop="qdbus org.kde.KWin /KWin queryWindowInfo"
+alias conda="micromamba"
 
 # GRML Aliases
 alias ...="cd ../.."
@@ -126,15 +128,15 @@ export PATH="$PNPM_HOME:$PATH"
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
 export MAMBA_EXE="$HOME/.micromamba/bin/micromamba";
-export MAMBA_ROOT_PREFIX="$HOME/micromamba";
+export MAMBA_ROOT_PREFIX="$HOME/.micromamba";
 __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__mamba_setup"
 else
-    if [ -f "$HOME/micromamba/etc/profile.d/micromamba.sh" ]; then
-        . "$HOME/micromamba/etc/profile.d/micromamba.sh"
+    if [ -f "$HOME/.micromamba/etc/profile.d/micromamba.sh" ]; then
+        . "$HOME/.micromamba/etc/profile.d/micromamba.sh"
     else
-        export  PATH="$HOME/micromamba/bin:$PATH"  # extra space after export prevents interference from conda init
+        export  PATH="$HOME/.micromamba/bin:$PATH"  # extra space after export prevents interference from conda init
     fi
 fi
 unset __mamba_setup
@@ -142,14 +144,14 @@ unset __mamba_setup
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('$HOME/micromamba/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('$HOME/.micromamba/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "$HOME/micromamba/etc/profile.d/conda.sh" ]; then
-        . "$HOME/micromamba/etc/profile.d/conda.sh"
+    if [ -f "$HOME/.micromamba/etc/profile.d/conda.sh" ]; then
+        . "$HOME/.micromamba/etc/profile.d/conda.sh"
     else
-        export PATH="$HOME/micromamba/bin:$PATH"
+        export PATH="$HOME/.micromamba/bin:$PATH"
     fi
 fi
 unset __conda_setup
