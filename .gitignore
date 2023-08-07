@@ -1,3 +1,7 @@
 *.bak
 .netrwhist
 packer_compiled.lua
+backup
+.config/mpv/watch_later
+.idea
+.git
