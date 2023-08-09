@@ -17,3 +17,6 @@ vim.g.coc_global_extensions = {
     "coc-highlight",
     "coc-spell-checker"
 }
+
+vimp.vnoremap("<M-L>", "<Plug>(coc-format-selected)")
+vimp.nnoremap("<M-L>", "<Plug>(coc-format)")
