@@ -18,5 +18,7 @@ vim.g.coc_global_extensions = {
     "coc-spell-checker"
 }
 
-vimp.vnoremap("<M-L>", "<Plug>(coc-format-selected)")
-vimp.nnoremap("<M-L>", "<Plug>(coc-format)")
+vimp.vnoremap({'silent'}, "<M-L>", "<Plug>(coc-format-selected)")
+vimp.nnoremap({'silent'}, "<M-L>", "<Plug>(coc-format)")
+vimp.nnoremap({'silent'}, "<M-CR>", "<Plug>(coc-codeaction-selected)")
+
