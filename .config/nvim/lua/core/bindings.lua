@@ -57,6 +57,7 @@ vim.api.nvim_command('autocmd TermOpen * startinsert')
 
 -- Ctrl+s to save
 vimp.nmap('<C-s>', ':w<CR>')
+vimp.imap('<C-s>', '<C-o>:w<CR>')
 
 -- Copilot hax
 vimp.map('<M-Tab>', 'copilot#Accept()');
@@ -92,3 +93,6 @@ vimp.nmap('<C-S-t>', ':tabnew<CR>')
 
 -- Shift+S should surround the current word with the next character
 vimp.vmap('S', 'ysiw')
+
+-- Clear search highlighting when pressing esc in normal mode
+vimp.nmap({'silent'}, '<Esc>', ':nohlsearch<CR>')
