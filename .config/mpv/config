@@ -129,6 +129,7 @@ window-scale=1
 
 # Screenshots
 screenshot-template="%F - %p - %n"
+screenshot-directory="~/Pictures/Snapshots"
 
 # Other
 #no-border
