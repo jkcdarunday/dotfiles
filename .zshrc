@@ -35,7 +35,7 @@ zplug check || zplug install
 zplug load
 zplug_blame::print_load_time
 
-. /usr/share/doc/find-the-command/ftc.zsh noprompt info
+. /usr/share/doc/find-the-command/ftc.zsh info
 . $HOME/.zsh/autoqalc.bash
 . /usr/bin/virtualenvwrapper.sh
 
