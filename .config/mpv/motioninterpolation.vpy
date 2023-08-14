@@ -10,9 +10,9 @@ import vapoursynth
 core = vapoursynth.core
 # ref: http://avisynth.org.ru/mvtools/mvtools2.html#functions
 # default is 400, less means interpolation will only happen when it will work well
-ignore_threshold=140
+ignore_threshold=400
 # if n% of blocks change more than threshold then don't interpolate at all (default is 51%)
-scene_change_percentage=15
+scene_change_percentage=51
 
 dst_fps = display_fps
 # Interpolating to fps higher than 60 is too CPU-expensive, smoothmotion can handle the rest.
