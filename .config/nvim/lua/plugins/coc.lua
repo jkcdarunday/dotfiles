@@ -15,7 +15,8 @@ vim.g.coc_global_extensions = {
     "coc-lists",
     "coc-git",
     "coc-highlight",
-    "coc-spell-checker"
+    "coc-spell-checker",
+    "coc-jedi"
 }
 
 vimp.vnoremap({'silent'}, "<M-L>", "<Plug>(coc-format-selected)")

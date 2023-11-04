@@ -96,3 +96,4 @@ vimp.vmap('S', 'ysiw')
 
 -- Clear search highlighting when pressing esc in normal mode
 vimp.nmap({'silent'}, '<Esc>', ':nohlsearch<CR>')
+
