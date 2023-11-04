@@ -11,10 +11,11 @@ setopt hist_ignore_all_dups
 ##########################
 ###### Load plugins ######
 ##########################
+# source ~/.zsh/rprompt.zsh
 export ZPLUG_BLAME_START_TIME=$(date +%s%N)
 . /usr/share/zsh/scripts/zplug/init.zsh
 
-zplug 'jkcdarunday/zplug-blame'
+# zplug 'jkcdarunday/zplug-blame'
 zplug "olets/zsh-abbr"
 zplug "zsh-users/zsh-syntax-highlighting", defer:1
 zplug "zsh-users/zsh-autosuggestions", defer:2
@@ -33,7 +34,7 @@ zplug "lib/clipboard", from:oh-my-zsh, defer:2
 
 zplug check || zplug install
 zplug load
-zplug_blame::print_load_time
+# zplug_blame::print_load_time
 
 . /usr/share/doc/find-the-command/ftc.zsh info
 . $HOME/.zsh/autoqalc.bash
@@ -55,6 +56,7 @@ bindkey "^[OM" vi-open-line-below
 bindkey "^R" fzf_history_search
 bindkey "^[[A" up-line-or-search
 bindkey "^[[B" down-line-or-search
+bindkey -s "^F" 'vim $(fzf)\n'
 
 ###### Aliases/Abbreviations ######
 alias mpv="env DRI_PRIME=1 RADV_PERFTEST=video_decode vk_radv mpv"
@@ -117,6 +119,7 @@ aurclone() { git clone "https://aur.archlinux.org/$1.git"; }
 aursshclone() { git clone "ssh://aur@aur.archlinux.org/$1.git"; }
 absclone() { git clone "https://gitlab.archlinux.org/archlinux/packaging/packages/$1.git" }
 
+alias srcesp=". /opt/esp-idf/export.sh"
 
 ###########################
 ###### Declare paths ######
@@ -162,3 +165,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH="$HOME/.bun/bin:$PATH"
