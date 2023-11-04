@@ -39,10 +39,11 @@ gpu-context=x11vk
 #video-sync=audio
 #sub-scale-with-window=yes
 
-hwdec=vulkan-copy
+#hwdec=vulkan-copy
+#hwdec=vulkan
 #hwdec=auto-copy
 #hwdec=none
-#hwdec=vaapi-copy
+hwdec=vaapi-copy
 #hwdec=vaapi
 #hwdec=vdpau
 #hwdec=nvdec
@@ -149,9 +150,9 @@ script-opts=osc-layout=bottombar
 #ytdl-format=244+bestaudio/135+bestaudio/247+bestaudio/136+bestaudio/webm+bestaudio
 #ytdl-format=webm+bestaudio
 #ytdl-format=bestvideo[height<=1440]+bestaudio/best[height<=1440]
-ytdl-format=bestvideo[height<=1440]+bestaudio/best
-#ytdl-raw-options=sub-lang=en,write-srt=,write-auto-sub=,mark-watched=,cookies-from-browser=firefox,verbose=
-ytdl-raw-options=sub-lang=en,write-srt=,write-auto-sub=,mark-watched=,verbose=
+ytdl-format=bestvideo[height<=2160]+bestaudio/best
+ytdl-raw-options=sub-lang=en,write-srt=,write-auto-sub=,mark-watched=,cookies-from-browser=firefox,verbose=
+#ytdl-raw-options=sub-lang=en,write-srt=,write-auto-sub=,mark-watched=,verbose=
 
 # https://www.reddit.com/r/mpv/comments/opoorx/mpv_with_ytdlp/
 script-opts=ytdl_hook-ytdl_path=yt-dlp
@@ -164,7 +165,8 @@ hr-seek-framedrop=no                # Fixes audio desync
 resume-playback=no                  # Not compatible with SVP
 
 # modern OSC
-osc=no
+# osc=no
+osc=yes
 border=no
 
 [Idle]
