@@ -1,0 +1,3 @@
+[submodule ".zsh/k"]
+	path = .zsh/k
+	url = https://github.com/supercrabtree/k.git
