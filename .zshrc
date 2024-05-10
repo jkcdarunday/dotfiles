@@ -6,6 +6,7 @@ setopt vi
 export HISTSIZE=10000000
 export SAVEHIST=10000000
 setopt hist_ignore_space
+setopt histignorespace
 setopt hist_ignore_all_dups
 
 ##########################
@@ -81,6 +82,7 @@ alias protonupdate="cproton"
 
 alias ainur="ssh ainur"
 alias zenon="ssh zenon"
+alias deck="ssh deck"
 
 alias status="sudo systemctl status"
 alias start="sudo systemctl start"
@@ -99,6 +101,9 @@ alias q="qalc"
 alias pacman="sudo pacman"
 alias kwinprop="qdbus org.kde.KWin /KWin queryWindowInfo"
 alias conda="micromamba"
+alias htop="sudo htop"
+alias cdw="cd $HOME/Codes/Holepunch"
+alias work="cd $HOME/Codes/Holepunch"
 
 # GRML Aliases
 alias ...="cd ../.."
@@ -115,9 +120,12 @@ alias ls="ls --color=auto"
 alias idea="intellij-idea-ultimate-edition"
 alias ideaq="idea \$PWD >/dev/null 2>&1 &"
 
+alias protontricks='flatpak run com.github.Matoking.protontricks'
+
 aurclone() { git clone "https://aur.archlinux.org/$1.git"; }
 aursshclone() { git clone "ssh://aur@aur.archlinux.org/$1.git"; }
 absclone() { git clone "https://gitlab.archlinux.org/archlinux/packaging/packages/$1.git" }
+hpclone() { git clone "git@github.com:holepunchto/$1.git" }
 
 alias srcesp=". /opt/esp-idf/export.sh"
 
@@ -166,3 +174,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 export PATH="$HOME/.bun/bin:$PATH"
+
+export PATH="$HOME/.config/pear/bin":$PATH
+
+export PATH="$HOME/.local/bin:$PATH"
