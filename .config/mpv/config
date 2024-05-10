@@ -1,13 +1,13 @@
 #Video
 profile=gpu-hq
-#vo=gpu-next,gpu
-vo=gpu
+vo=gpu-next,gpu
+#vo=gpu
 #gpu-api=vulkan
 #gpu-context=x11vk
 #gpu-context=x11egl
 #gpu-api=opengl
-gpu-context=x11vk
-#gpu-context=wayland
+#gpu-context=x11vk
+gpu-context=wayland
 #gpu-context=waylandvk
 
 #spirv-compiler=shaderc
@@ -92,13 +92,13 @@ af-add=scaletempo2=search-interval=50:window-size=40
 
 # Subs
 #no-sub-ass
-#sub-ass-force-style=Kerning=yes
+sub-ass-force-style=Kerning=yes
 demuxer-mkv-subtitle-preroll
 sub-font="OpenSans-Semibold"
 sub-font-size=48
 sub-bold=no
 sub-margin-y=24
-sub-color="1.0/1.0/1.0/0.60"
+sub-color="1.0/1.0/1.0/0.80"
 sub-border-color="#000000"
 sub-border-size=1
 sub-shadow-offset=1.25
@@ -174,5 +174,5 @@ profile-cond=p["idle-active"]
 profile-restore=copy-equal
 title=' '
 keepaspect=no
-background=1
+#background=1
 
