@@ -7,8 +7,8 @@ vo=gpu-next,gpu
 #gpu-context=x11egl
 #gpu-api=opengl
 #gpu-context=x11vk
-gpu-context=wayland
-#gpu-context=waylandvk
+#gpu-context=wayland
+gpu-context=waylandvk
 
 #spirv-compiler=shaderc
 #scale=ewa_lanczossharp
@@ -69,6 +69,8 @@ hwdec=vaapi-copy
 #af=atempo
 #af=acompressor
 
+#HDR
+target-colorspace-hint=yes
 
 #Audio
 ao=pipewire,pulse,openal,alsa
