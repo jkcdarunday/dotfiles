@@ -82,6 +82,7 @@ alias protonupdate="cproton"
 
 alias ainur="ssh ainur"
 alias zenon="ssh zenon"
+alias exodia="ssh exodia"
 alias deck="ssh deck"
 
 alias status="sudo systemctl status"
