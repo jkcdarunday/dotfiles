@@ -14,7 +14,7 @@ return require('packer').startup(function()
   use 'kylechui/nvim-surround' -- Surrounding
   use 'lewis6991/impatient.nvim' -- Speedup startup 
   use 'stevearc/dressing.nvim' -- Popup styling
-  use {'akinsho/bufferline.nvim', tag = 'v2.*', requires = 'kyazdani42/nvim-web-devicons'} -- Top bars
+  use {'akinsho/bufferline.nvim', tag = '*', requires = 'kyazdani42/nvim-web-devicons'} -- Top bars
   use { 'goolord/alpha-nvim' } -- Startup screen
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.x', requires = { {'nvim-lua/plenary.nvim'} } } -- Fuzzy finder
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Source code tree parser
