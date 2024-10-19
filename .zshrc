@@ -41,6 +41,11 @@ zplug load
 . $HOME/.zsh/autoqalc.bash
 . /usr/bin/virtualenvwrapper.sh
 
+zstyle ':completion:*:processes' command 'NOCOLORS=1 ps -U $(whoami)|sed "/ps/d"'
+zstyle ':completion:*:processes' insert-ids menu yes select
+zstyle ':completion:*:processes-names' command 'NOCOLORS=1 ps xho command|sed "s/://g"'
+zstyle ':completion:*:processes' sort false
+
 #######################
 ###### Keybinds #######
 #######################
@@ -83,6 +88,7 @@ alias protonupdate="cproton"
 alias ainur="ssh ainur"
 alias zenon="ssh zenon"
 alias exodia="ssh exodia"
+alias exodiawifi="ssh exodiawifi"
 alias deck="ssh deck"
 
 alias status="sudo systemctl status"
@@ -105,6 +111,7 @@ alias conda="micromamba"
 alias htop="sudo htop"
 alias cdw="cd $HOME/Codes/Holepunch"
 alias work="cd $HOME/Codes/Holepunch"
+alias cdpear="cd $HOME/Codes/Holepunch/pear"
 
 # GRML Aliases
 alias ...="cd ../.."
