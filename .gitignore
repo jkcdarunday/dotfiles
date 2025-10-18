@@ -7,3 +7,4 @@ backup
 .git
 .directory
 .stversions
+.zsh/zsh-plugins.zsh
