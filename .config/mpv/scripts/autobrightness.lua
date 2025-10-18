@@ -3,7 +3,6 @@
 
 local dbus_path = "/org/kde/Solid/PowerManagement/Actions/BrightnessControl"
 local service_name = "local.org_kde_powerdevil"
-
 local max_brightness = tonumber(io.popen("qdbus " .. service_name ..  " " .. dbus_path .. " brightnessMax"):read("*all"))
 local default_brightness
 
