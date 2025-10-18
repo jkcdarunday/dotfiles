@@ -1,8 +1,10 @@
 [submodule ".zsh/k"]
 	path = .zsh/k
 	url = https://github.com/supercrabtree/k.git
+	shallow = true
+
 [submodule ".zsh/antidote"]
 	path = .zsh/antidote
 	url = https://github.com/mattmc3/antidote.git
-	depth = 1
+	shallow = true
 
