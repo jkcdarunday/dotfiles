@@ -1,0 +1,16 @@
+# Load immediately
+#jkcdarunday/zplug-blame
+zsh-users/zsh-completions
+woefe/git-prompt.zsh
+
+# Defer for speed
+supercrabtree/k kind:defer
+ohmyzsh/ohmyzsh path:plugins/dirhistory kind:defer
+olets/zsh-abbr kind:defer
+hlissner/zsh-autopair kind:defer
+laurenkt/zsh-vimto kind:defer
+ohmyzsh/ohmyzsh path:lib/clipboard.zsh kind:defer
+zsh-users/zsh-autosuggestions kind:defer
+zsh-users/zsh-history-substring-search kind:defer
+joshskidmore/zsh-fzf-history-search kind:defer
+zsh-users/zsh-syntax-highlighting kind:defer

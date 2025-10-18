@@ -14,30 +14,12 @@ setopt hist_ignore_all_dups
 ##########################
 # source ~/.zsh/rprompt.zsh
 export ZPLUG_BLAME_START_TIME=$(date +%s%N)
-. /usr/share/zsh/scripts/zplug/init.zsh
+export ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
+source $HOME/.zsh/antidote/antidote.zsh
+antidote load ${HOME}/.zsh/zsh-plugins.txt
+#zplug_blame::print_load_time
 
-# zplug 'jkcdarunday/zplug-blame'
-zplug "olets/zsh-abbr"
-zplug "zsh-users/zsh-syntax-highlighting", defer:1
-zplug "zsh-users/zsh-autosuggestions", defer:2
-zplug "zsh-users/zsh-history-substring-search", defer:2
-zplug "zsh-users/zsh-completions", defer:2
-zplug "supercrabtree/k"
-
-zplug "woefe/wbase.zsh"
-zplug "woefe/git-prompt.zsh", use:"{git-prompt.zsh,examples/default.zsh}"
-zplug "hlissner/zsh-autopair", defer:2
-zplug "joshskidmore/zsh-fzf-history-search"
-zplug "laurenkt/zsh-vimto"
-
-zplug "plugins/dirhistory", from:oh-my-zsh, defer:2
-zplug "lib/clipboard", from:oh-my-zsh, defer:2
-
-zplug check || zplug install
-zplug load
-# zplug_blame::print_load_time
-
-. /usr/share/doc/find-the-command/ftc.zsh info
+. /usr/share/doc/find-the-command/ftc.zsh info noupdate
 . $HOME/.zsh/autoqalc.bash
 . /usr/bin/virtualenvwrapper.sh
 
@@ -85,6 +67,7 @@ alias gdiff="git diff"
 alias gdiffc="git diff --cached"
 alias protonupdate="cproton"
 
+alias mainur="mosh ainur"
 alias ainur="ssh ainur"
 alias zenon="ssh zenon"
 alias exodia="ssh exodia"
@@ -112,6 +95,7 @@ alias htop="sudo htop"
 alias cdw="cd $HOME/Codes/Holepunch"
 alias work="cd $HOME/Codes/Holepunch"
 alias cdpear="cd $HOME/Codes/Holepunch/pear"
+alias nopear="killall -w pear pear-sidecar pear-runtime pear.dev pear.next"
 
 # GRML Aliases
 alias ...="cd ../.."
@@ -129,6 +113,7 @@ alias idea="intellij-idea-ultimate-edition"
 alias ideaq="idea \$PWD >/dev/null 2>&1 &"
 
 alias protontricks='flatpak run com.github.Matoking.protontricks'
+alias nowayland='env GDK_BACKEND=x11 QT_QPA_PLATFORM=xcb WAYLAND_DISPLAY='
 
 aurclone() { git clone "https://aur.archlinux.org/$1.git"; }
 aursshclone() { git clone "ssh://aur@aur.archlinux.org/$1.git"; }
@@ -183,6 +168,12 @@ unset __conda_setup
 
 export PATH="$HOME/.bun/bin:$PATH"
 
-export PATH="$HOME/.config/pear/bin":$PATH
+# Added by Pear Runtime, configures system with Pear CLI
+export PATH="/home/skeithc/.config/pear/bin":$PATH
 
 export PATH="$HOME/.local/bin:$PATH"
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/skeithc/.lmstudio/bin"
+# End of LM Studio CLI section
