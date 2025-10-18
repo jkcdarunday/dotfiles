@@ -56,7 +56,7 @@ vimp.map('<C-h>', 'b')
 vim.api.nvim_command('autocmd TermOpen * startinsert')
 
 -- Ctrl+s to save
-vimp.nmap('<C-s>', ':w<CR>')
+vimp.nmap({'silent', 'override'}, '<C-s>', ':w<CR>')
 vimp.imap('<C-s>', '<C-o>:w<CR>')
 
 -- Copilot hax
@@ -85,7 +85,7 @@ vimp.nmap({'silent'}, 'gi', '<Plug>(coc-implementation)')
 vimp.nmap({'silent'}, 'gr', '<Plug>(coc-references)')
 
 -- Ctrl+tab to switch buffers (when not bound by the console)
-vimp.nmap('<C-tab>', ':bnext<CR>')
+vimp.nmap({'silent'}, '<C-tab>', ':bnext<CR>')
 vimp.nmap('<C-S-tab>', ':bprev<CR>')
 -- vimp.nmap('<C-w>', ':bd<CR>') -- Conflicts with buffer switching
 vimp.nmap('<C-t>', ':tabnew<CR>')
@@ -97,3 +97,4 @@ vimp.vmap('S', 'ysiw')
 -- Clear search highlighting when pressing esc in normal mode
 vimp.nmap({'silent'}, '<Esc>', ':nohlsearch<CR>')
 
+vimp.nmap('<leader>tt', ':ToggleTerm<CR>')

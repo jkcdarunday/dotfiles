@@ -16,7 +16,7 @@ return require('packer').startup(function()
   use 'stevearc/dressing.nvim' -- Popup styling
   use {'akinsho/bufferline.nvim', tag = '*', requires = 'kyazdani42/nvim-web-devicons'} -- Top bars
   use { 'goolord/alpha-nvim' } -- Startup screen
-  use { 'nvim-telescope/telescope.nvim', tag = '0.1.x', requires = { {'nvim-lua/plenary.nvim'} } } -- Fuzzy finder
+  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { {'nvim-lua/plenary.nvim'} } } -- Fuzzy finder
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Source code tree parser
   use { 'max397574/better-escape.nvim' } -- jj and kk escaping
   use { 'akinsho/toggleterm.nvim', tag = 'v2.*' } -- Terminal
