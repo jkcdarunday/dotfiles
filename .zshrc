@@ -96,6 +96,7 @@ alias cdw="cd $HOME/Codes/Holepunch"
 alias work="cd $HOME/Codes/Holepunch"
 alias cdpear="cd $HOME/Codes/Holepunch/pear"
 alias nopear="killall -w pear pear-sidecar pear-runtime pear.dev pear.next"
+alias pingstat="ping -i 0.2 -c 200 8.8.8.8"
 
 # GRML Aliases
 alias ...="cd ../.."
