@@ -6,13 +6,13 @@ let g:copilot_no_tab_map = v:true
 
 " Esc should dismiss copilot suggestions first
 inoremap <silent><expr> <Esc>
-            \ copilot#GetDisplayedSuggestion().text != '' ? copilot#Dismiss() :
+            \ exists('*copilot#GetDisplayedSuggestion') && copilot#GetDisplayedSuggestion().text !=# '' ? copilot#Dismiss() : 
             \ "\<C-\>\<C-n>"
 
 " Accept copilot first, CoC next, and then fallback to native tab to retain
 " indent support
 inoremap <silent><expr> <TAB>
-            \ copilot#GetDisplayedSuggestion().text != '' ? copilot#Accept("\<CR>") :
+            \ exists('*copilot#GetDisplayedSuggestion') && copilot#GetDisplayedSuggestion().text != '' ? copilot#Accept("\<CR>") :
             \ coc#pum#visible() ? coc#pum#next(1) :
             \ "\<Tab>"
 
