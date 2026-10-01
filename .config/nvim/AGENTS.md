@@ -24,6 +24,7 @@ This repository is a modular, Lua-centric Neovim configuration built on:
 ├── init.vim.bak              # Legacy backup of init.vim (do not modify)
 ├── coc-settings.json         # CoC configuration & custom language server definitions
 ├── copilot-workaround.vim    # Vimscript tab-completion integration between Copilot and CoC
+├── CHANGELOG.md              # Historical log of notable changes (ISO date format)
 ├── AGENTS.md                 # Agent instructions (this file)
 ├── lua/
 │   ├── init.lua              # Requires core settings and active plugin configurations
@@ -124,6 +125,9 @@ nvim --headless "+quit"
 ```
 
 If the command exits with exit code `0` and without unexpected lua stack traces, the core configuration loaded successfully.
+
+### 4.4 Documenting Changes
+Whenever significant architectural changes, fixes, or additions are made, document them in `CHANGELOG.md` following the [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format with dates in ISO 8601 format (`YYYY-MM-DD`).
 
 ---
 
