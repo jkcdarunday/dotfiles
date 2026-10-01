@@ -51,6 +51,7 @@ alias mpv="env DRI_PRIME=1 RADV_PERFTEST=video_decode vk_radv mpv"
 alias ssvim="sudo vim"
 alias svim="sudo -e"
 alias gclone="git clone"
+alias gclones="git clone --depth=1"
 alias gfa="git fetch --all"
 alias gpull="git pull"
 alias gpush="git push"
@@ -92,11 +93,14 @@ alias pacman="sudo pacman"
 alias kwinprop="qdbus org.kde.KWin /KWin queryWindowInfo"
 alias conda="micromamba"
 alias htop="sudo htop"
+alias cdc="cd $HOME/Codes"
+alias codes="cd $HOME/Codes"
 alias cdw="cd $HOME/Codes/Holepunch"
 alias work="cd $HOME/Codes/Holepunch"
 alias cdpear="cd $HOME/Codes/Holepunch/pear"
 alias nopear="killall -w pear pear-sidecar pear-runtime pear.dev pear.next"
 alias pingstat="ping -i 0.2 -c 200 8.8.8.8"
+alias myip="mullvad-exclude curl -s https://ifconfig.co/json | jq"
 
 # GRML Aliases
 alias ...="cd ../.."
@@ -110,7 +114,7 @@ alias lsh="ls -lh"
 alias ls="ls --color=auto"
 
 # InteliJ IDEA Aliases
-alias idea="intellij-idea-ultimate-edition"
+#alias idea="intellij-idea-ultimate-edition"
 alias ideaq="idea \$PWD >/dev/null 2>&1 &"
 
 alias protontricks='flatpak run com.github.Matoking.protontricks'
@@ -119,7 +123,9 @@ alias nowayland='env GDK_BACKEND=x11 QT_QPA_PLATFORM=xcb WAYLAND_DISPLAY='
 aurclone() { git clone "https://aur.archlinux.org/$1.git"; }
 aursshclone() { git clone "ssh://aur@aur.archlinux.org/$1.git"; }
 absclone() { git clone "https://gitlab.archlinux.org/archlinux/packaging/packages/$1.git" }
-hpclone() { git clone "git@github.com:holepunchto/$1.git" }
+ghsclone() { git clone "git@github.com:$1.git" }
+ghclone() { git clone "https://github.com/$1.git" }
+hpclone() { ghsclone "holepunchto/$1" }
 
 alias srcesp=". /opt/esp-idf/export.sh"
 
@@ -169,8 +175,6 @@ unset __conda_setup
 
 export PATH="$HOME/.bun/bin:$PATH"
 
-# Added by Pear Runtime, configures system with Pear CLI
-export PATH="/home/skeithc/.config/pear/bin":$PATH
 
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -178,3 +182,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/home/skeithc/.lmstudio/bin"
 # End of LM Studio CLI section
+
+export ZDOTDIR="$HOME"
+export XDG_CACHE_HOME="$HOME/.cache"
