@@ -5,7 +5,7 @@ vim.g.coc_global_extensions = {
     "coc-coverage",
     "coc-solidity",
     "coc-rust-analyzer",
-    "coc-lua",
+    -- "coc-lua",
     "coc-json",
     "coc-prettier",
     "coc-tsserver",
