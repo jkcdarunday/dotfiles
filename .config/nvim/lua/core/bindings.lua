@@ -57,7 +57,7 @@ vim.api.nvim_command('autocmd TermOpen * startinsert')
 
 -- Ctrl+s to save
 vimp.nmap({'silent', 'override'}, '<C-s>', ':w<CR>')
-vimp.imap('<C-s>', '<C-o>:w<CR>')
+vimp.imap({'override'}, '<C-s>', '<C-o>:w<CR>')
 
 -- Copilot hax
 vimp.map('<M-Tab>', 'copilot#Accept()');

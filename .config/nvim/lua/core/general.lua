@@ -1,4 +1,5 @@
 local vimp = require('vimp')
+vimp.always_override = true
 
 --== CONFIG ==--
 -- General config
