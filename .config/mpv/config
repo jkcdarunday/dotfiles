@@ -33,9 +33,9 @@ gpu-context=waylandvk
 #deband-grain=48
 
 #interpolation=yes
-video-sync=display-resample
+#video-sync=display-resample
 #video-sync=display-vdrop
-#video-sync=audio
+video-sync=audio
 #sub-scale-with-window=yes
 
 #hwdec=vulkan-copy
